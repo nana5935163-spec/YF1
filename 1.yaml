@@ -49,7 +49,7 @@ dns:
     ipcidr:
       - 240.0.0.0/4
 proxies:
-     - { name: '[anytls][直连]HK香港(移动优化) B x1', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 52095, password: 934be6bf-9d8a-4154-81a6-e510b6475ba9, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer }
+    - { name: '[anytls][直连]HK香港(移动优化) B x1', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 52095, password: 934be6bf-9d8a-4154-81a6-e510b6475ba9, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer }
     - { name: '[anytls][直连]HK香港(移动优化) C x1', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 52095, password: 934be6bf-9d8a-4154-81a6-e510b6475ba9, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer }
     - { name: '[anytls][直连]US美国(三网优化) A x1', type: anytls, server: usa.6rguyesfdhvbz.uk, port: 23489, password: 934be6bf-9d8a-4154-81a6-e510b6475ba9, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer }
     - { name: '[anytls][直连]US美国家宽(三网优化) B x1', type: anytls, server: usa.6rguyesfdhvbz.uk, port: 23466, password: 934be6bf-9d8a-4154-81a6-e510b6475ba9, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer }
