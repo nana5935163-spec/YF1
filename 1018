@@ -19,13 +19,20 @@ dns:
   cache-algorithm: arc
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  fake-ip-filter: ['*.lan', '*.local', '*.localhost', '*.arpa', 'time.*.com', 'ntp.*.com', 'time.*.gov', 'time.*.apple.com', time.windows.com, +.pool.ntp.org, '*.msftconnecttest.com', '*.msftncsi.com', captive.apple.com, connectivitycheck.gstatic.com, localhost.ptlogin2.qq.com, '+.stun.*.*', '+.stun.*.*.*', '*.mcdn.bilivideo.cn', '*.battlenet.com.cn', +.market.xiaomi.com]
+  fake-ip-filter: ['*.lan', '*.local', '*.localhost', '*.arpa', 'time.*.com', 'ntp.*.com', 'time.*.gov', 'time.*.apple.com',
+    time.windows.com, +.pool.ntp.org, '*.msftconnecttest.com', '*.msftncsi.com', captive.apple.com, 
+      connectivitycheck.gstatic.com, localhost.ptlogin2.qq.com, '+.stun.*.*', '+.stun.*.*.*', '*.mcdn.bilivideo.cn', '*.battlenet.com.cn',
+    +.market.xiaomi.com]
   use-hosts: true
   respect-rules: true
   prefer-h3: false
   default-nameserver: [223.5.5.5, 119.29.29.29]
-  nameserver: ['https://dns.cloudflare.com/dns-query#奶云****', 'https://dns.google/dns-query#奶云****']
-  nameserver-policy: {'rule-set:cn,private': ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], saas.sin.fan: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], 1.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], 2.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], us1.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], us2.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']}
+  nameserver: ['https://dns.cloudflare.com/dns-query', 'https://dns.google/dns-query']
+  nameserver-policy: {'rule-set:cn,private': ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], 
+      saas.sin.fan: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], 1.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query',
+      'https://dns.alidns.com/dns-query'], 2.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'],
+    us1.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query'], us2.6rguyesfdhvbz.uk: ['https://doh.pub/dns-query',
+      'https://dns.alidns.com/dns-query']}
   proxy-server-nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
   direct-nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
   direct-nameserver-follow-policy: false
@@ -37,71 +44,199 @@ sniffer:
   sniff: {HTTP: {ports: [80, 8080-8880], override-destination: true}, TLS: {ports: [443, 8443]}}
   skip-domain: [+.push.apple.com, 'Mijia Cloud']
 proxies:
-- name: 售后咨询QQ：936692436
-  type: socks5
-  server: 127.0.0.1
-  port: 1
-  udp: false
-- name: 无法使用？请更新订阅获取新节点
-  type: socks5
-  server: 127.0.0.1
-  port: 1
-  udp: false
-- {name: '🇭🇰 香港 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 3xrg4vyw.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇭🇰 香港 AnyTLS 02', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 3xrg4vyw.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇭🇰 香港 AnyTLS 03', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: z3640xdk.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇭🇰 香港 AnyTLS 04', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: z3640xdk.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 AnyTLS 04', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: l6w2zf2h.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 AnyTLS 01', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: prnmpksy.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 AnyTLS 02', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: uny64sbg.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 AnyTLS 03', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: ty9va0oe.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇸🇬 新加坡 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: mi3aeuhf.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇸🇬 新加坡 AnyTLS 02', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: jyvwr1m4.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇸🇬 新加坡 AnyTLS 03', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: cohqt7aq.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇩🇪 德国 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: nw2lr687.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇳🇬 尼日利亚 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 45zmy56g.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇮🇳 印度 AnyTLS 01', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: vat32jva.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
-- {name: '🇭🇰 香港 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: a-star.edu.sg, reality-opts: {public-key: g_zLZWBK-fEIIZlqvlajj7IayHCvnkdyzpidCOUaGko, short-id: 3456f305}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇭🇰 香港 Reality 02', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: shingaku.mynavi.jp, reality-opts: {public-key: Kje-ArJ9fAuFhe6oNpPsrsQ95ByWfN06Qvi0nU-WU3E, short-id: 2765beb6}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇭🇰 香港 Reality 03', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: hci.edu.sg, reality-opts: {public-key: Gqsdk_KkUcTXi9chOnqEts5lPHtObmmhYYCIvElOOjw, short-id: dc1f777d}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇭🇰 香港 Reality 04', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: kango.mynavi.jp, reality-opts: {public-key: BeRsRyBWmHBI6OVVsOccFdAZL1WdhuaM4RjLCdL2Qy4, short-id: 73a3b46f}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 Reality 04', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: www.hosei.ac.jp, reality-opts: {public-key: nVXcZFGUdGsXusiW-WQwOUs0n_Xs4qqXLVwRNfrmOEY, short-id: 33b7feba}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 Reality 01', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: www.ipmu.jp, reality-opts: {public-key: 0B7d1ycVfkiDKmPc3sAjZhWD3TAsNmWn7ro3olyIjDQ, short-id: '58990549'}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 Reality 02', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: www.yozemi.ac.jp, reality-opts: {public-key: _CaKdqNe_Zt4Ndlw65Ra3R28TcrCcKx6v8n0W7xf6gk, short-id: bf25e4ec}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇯🇵 日本 Reality 03', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: www.ecc.co.jp, reality-opts: {public-key: LjxDMyVttjHqZ2GB4YanQYcIrM_rSwnBZGOenU0eaR8, short-id: 4913207b}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇸🇬 新加坡 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: ite.edu.sg, reality-opts: {public-key: X4hWcD82Wn8IpDHlpijxHBInW-4JLcL663FTmHhUHyg, short-id: 85b9c390}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇸🇬 新加坡 Reality 02', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: np.edu.sg, reality-opts: {public-key: qtAJ9tWykTy_6xNfWSvrEbWwKNxhMuIw3xB0qx4QVmc, short-id: 3cf88c27}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇸🇬 新加坡 Reality 03', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: ri.edu.sg, reality-opts: {public-key: voZv6VcURIdegmNlx6Pvv9kR7QZSeMx6wYY_fFGDZ2U, short-id: 310eed5a}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇩🇪 德国 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: acjc.moe.edu.sg, reality-opts: {public-key: e7snHieTx6wpIvGXWsZOOrAWS0djJIN23Q_8YF-87yg, short-id: eb3e0877}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇳🇬 尼日利亚 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: acsindep.moe.edu.sg, reality-opts: {public-key: MPyowwzkF41QzLOSJMGr2f3MOqbNAHtTsXWcA4Fp6FI, short-id: fbb34367}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇮🇳 印度 Reality 01', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: www.jpf.go.jp, reality-opts: {public-key: IzpmTuabu8E2diaGk-h3mt3taW8ImP8MA1XZ3W7_AQw, short-id: 7463580c}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇺🇸 美国 Reality 01', type: vless, server: us1.6rguyesfdhvbz.uk, port: 47392, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: www.amd.com, reality-opts: {public-key: I-6LWnYtqgIDRSHQzWtGsD0FQ4GvcBwa2dgEhY_ji0k, short-id: a6a4d02f}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇺🇸 美国 Reality 02', type: vless, server: us2.6rguyesfdhvbz.uk, port: 52816, uuid: e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, ip-version: ipv6-prefer, servername: www.dell.com, reality-opts: {public-key: TarK1DubMJe4imbMWUE241TKa5LTCLBKrjTqdlYM300, short-id: 8539378c}, client-fingerprint: chrome, dialer-proxy: 前置中转}
-- {name: '🇨🇳 南京移动', type: http, server: 36.155.169.188, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 广州移动', type: http, server: 183.240.98.84, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 广州电信', type: http, server: 14.215.182.75, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 南京电信', type: http, server: 180.101.50.249, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 北京电信', type: http, server: 220.181.7.1, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 保定联通', type: http, server: 110.242.70.68, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 苏州联通', type: http, server: 157.0.146.158, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 广州联通', type: http, server: 163.177.17.6, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
-- {name: '🇨🇳 南京联通', type: http, server: 153.3.237.117, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android 9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇭🇰 香港 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    3xrg4vyw.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇭🇰 香港 AnyTLS 02', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    3xrg4vyw.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇭🇰 香港 AnyTLS 03', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    z3640xdk.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇭🇰 香港 AnyTLS 04', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    z3640xdk.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 AnyTLS 04', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    l6w2zf2h.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 AnyTLS 01', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    prnmpksy.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 AnyTLS 02', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    uny64sbg.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 AnyTLS 03', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    ty9va0oe.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇸🇬 新加坡 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    mi3aeuhf.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇸🇬 新加坡 AnyTLS 02', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    jyvwr1m4.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇸🇬 新加坡 AnyTLS 03', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    cohqt7aq.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇩🇪 德国 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    nw2lr687.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇳🇬 尼日利亚 AnyTLS 01', type: anytls, server: 1.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    45zmy56g.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇮🇳 印度 AnyTLS 01', type: anytls, server: 2.6rguyesfdhvbz.uk, port: 443, password: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, udp: true, client-fingerprint: chrome, ip-version: ipv6-prefer, sni: 
+    vat32jva.6rguyesfdhvbz.uk, skip-cert-verify: false, dialer-proxy: 前置中转}
+- {name: '🇭🇰 香港 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: a-star.edu.sg, reality-opts: {public-key: 
+      g_zLZWBK-fEIIZlqvlajj7IayHCvnkdyzpidCOUaGko, short-id: 3456f305}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇭🇰 香港 Reality 02', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: shingaku.mynavi.jp, reality-opts: {public-key: 
+      Kje-ArJ9fAuFhe6oNpPsrsQ95ByWfN06Qvi0nU-WU3E, short-id: 2765beb6}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇭🇰 香港 Reality 03', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: hci.edu.sg, reality-opts: {public-key: 
+      Gqsdk_KkUcTXi9chOnqEts5lPHtObmmhYYCIvElOOjw, short-id: dc1f777d}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇭🇰 香港 Reality 04', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: kango.mynavi.jp, reality-opts: {public-key: 
+      BeRsRyBWmHBI6OVVsOccFdAZL1WdhuaM4RjLCdL2Qy4, short-id: 73a3b46f}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 Reality 04', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: www.hosei.ac.jp, reality-opts: {public-key: 
+      nVXcZFGUdGsXusiW-WQwOUs0n_Xs4qqXLVwRNfrmOEY, short-id: 33b7feba}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 Reality 01', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: www.ipmu.jp, reality-opts: {public-key: 
+      0B7d1ycVfkiDKmPc3sAjZhWD3TAsNmWn7ro3olyIjDQ, short-id: '58990549'}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 Reality 02', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: www.yozemi.ac.jp, reality-opts: {public-key: 
+      _CaKdqNe_Zt4Ndlw65Ra3R28TcrCcKx6v8n0W7xf6gk, short-id: bf25e4ec}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇯🇵 日本 Reality 03', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: www.ecc.co.jp, reality-opts: {public-key: 
+      LjxDMyVttjHqZ2GB4YanQYcIrM_rSwnBZGOenU0eaR8, short-id: 4913207b}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇸🇬 新加坡 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: ite.edu.sg, reality-opts: {public-key: 
+      X4hWcD82Wn8IpDHlpijxHBInW-4JLcL663FTmHhUHyg, short-id: 85b9c390}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇸🇬 新加坡 Reality 02', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: np.edu.sg, reality-opts: {public-key: 
+      qtAJ9tWykTy_6xNfWSvrEbWwKNxhMuIw3xB0qx4QVmc, short-id: 3cf88c27}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇸🇬 新加坡 Reality 03', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: ri.edu.sg, reality-opts: {public-key: 
+      voZv6VcURIdegmNlx6Pvv9kR7QZSeMx6wYY_fFGDZ2U, short-id: 310eed5a}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇩🇪 德国 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: acjc.moe.edu.sg, reality-opts: {public-key: 
+      e7snHieTx6wpIvGXWsZOOrAWS0djJIN23Q_8YF-87yg, short-id: eb3e0877}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇳🇬 尼日利亚 Reality 01', type: vless, server: 1.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: acsindep.moe.edu.sg, reality-opts: {public-key: 
+      MPyowwzkF41QzLOSJMGr2f3MOqbNAHtTsXWcA4Fp6FI, short-id: fbb34367}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇮🇳 印度 Reality 01', type: vless, server: 2.6rguyesfdhvbz.uk, port: 443, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: www.jpf.go.jp, reality-opts: {public-key: 
+      IzpmTuabu8E2diaGk-h3mt3taW8ImP8MA1XZ3W7_AQw, short-id: 7463580c}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇺🇸 美国 Reality 01', type: vless, server: us1.6rguyesfdhvbz.uk, port: 47392, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: www.amd.com, reality-opts: {public-key: 
+      I-6LWnYtqgIDRSHQzWtGsD0FQ4GvcBwa2dgEhY_ji0k, short-id: a6a4d02f}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇺🇸 美国 Reality 02', type: vless, server: us2.6rguyesfdhvbz.uk, port: 52816, uuid: 
+    e224cdab-e005-49bb-9967-cdaec8541ce0, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, 
+    ip-version: ipv6-prefer, servername: www.dell.com, reality-opts: {public-key: 
+      TarK1DubMJe4imbMWUE241TKa5LTCLBKrjTqdlYM300, short-id: 8539378c}, client-fingerprint: chrome, dialer-proxy: 前置中转}
+- {name: '🇨🇳 南京移动', type: http, server: 36.155.169.188, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 广州移动', type: http, server: 183.240.98.84, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 广州电信', type: http, server: 14.215.182.75, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 南京电信', type: http, server: 180.101.50.249, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 北京电信', type: http, server: 220.181.7.1, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 保定联通', type: http, server: 110.242.70.68, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 苏州联通', type: http, server: 157.0.146.158, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 广州联通', type: http, server: 163.177.17.6, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
+- {name: '🇨🇳 南京联通', type: http, server: 153.3.237.117, port: 443, headers: {Host: 'down.dingtalk.com:80', with-At: 
+      down.dingtalk.com, X-T5-Auth: '2025848265', User-Agent: 'okhttp/3.11.0 SP-engine/2.71.0 Dalvik/2.1.0 (Linux; U; Android
+      9; HMA-AL00 Build/PQ3B.190801.002) baiduboxapp/13.33.0.11 (Baidu; P1 9)'}, test-url: 'http://connectivitycheck.platform.hicloud.com/generate_204'}
 proxy-groups:
-- name: 公告
+- name: GLOBAL
   type: select
   proxies:
-  - 售后咨询QQ：936692436
-  - 无法使用？请更新订阅获取新节点
-- {name: 手动选择, type: select, proxies: [自动选择, 故障转移, 香港自动, 日本自动, 新加坡自动, 美国自动, '🇭🇰 香港 AnyTLS 01', '🇭🇰 香港 AnyTLS 02', '🇭🇰 香港 AnyTLS 03', '🇭🇰 香港 AnyTLS 04', '🇯🇵 日本 AnyTLS 04', '🇯🇵 日本 AnyTLS 01', '🇯🇵 日本 AnyTLS 02', '🇯🇵 日本 AnyTLS 03', '🇸🇬 新加坡 AnyTLS 01', '🇸🇬 新加坡 AnyTLS 02', '🇸🇬 新加坡 AnyTLS 03', '🇩🇪 德国 AnyTLS 01', '🇳🇬 尼日利亚 AnyTLS 01', '🇮🇳 印度 AnyTLS 01', '🇭🇰 香港 Reality 01', '🇭🇰 香港 Reality 02', '🇭🇰 香港 Reality 03', '🇭🇰 香港 Reality 04', '🇯🇵 日本 Reality 04', '🇯🇵 日本 Reality 01', '🇯🇵 日本 Reality 02', '🇯🇵 日本 Reality 03', '🇸🇬 新加坡 Reality 01', '🇸🇬 新加坡 Reality 02', '🇸🇬 新加坡 Reality 03', '🇩🇪 德国 Reality 01', '🇳🇬 尼日利亚 Reality 01', '🇮🇳 印度 Reality 01', '🇺🇸 美国 Reality 01', '🇺🇸 美国 Reality 02']}
-- {name: 前置中转, type: select, proxies: [关闭, 跳板线路, '🇨🇳 南京移动', '🇨🇳 广州移动', '🇨🇳 广州电信', '🇨🇳 南京电信', '🇨🇳 北京电信', '🇨🇳 保定联通', '🇨🇳 苏州联通', '🇨🇳 广州联通', '🇨🇳 南京联通']}
-- {name: 跳板线路, type: url-test, proxies: ['🇨🇳 南京移动', '🇨🇳 广州移动', '🇨🇳 广州电信', '🇨🇳 南京电信', '🇨🇳 北京电信', '🇨🇳 保定联通', '🇨🇳 苏州联通', '🇨🇳 广州联通', '🇨🇳 南京联通'], url: 'http://connectivitycheck.platform.hicloud.com/generate_204', interval: 300, tolerance: 100, lazy: true, hidden: true}
+  - 手动选择
+  - '🇭🇰 香港 AnyTLS 01'
+  - '🇭🇰 香港 AnyTLS 02'
+  - '🇭🇰 香港 AnyTLS 03'
+  - '🇭🇰 香港 AnyTLS 04'
+  - '🇯🇵 日本 AnyTLS 04'
+  - '🇯🇵 日本 AnyTLS 01'
+  - '🇯🇵 日本 AnyTLS 02'
+  - '🇯🇵 日本 AnyTLS 03'
+  - '🇸🇬 新加坡 AnyTLS 01'
+  - '🇸🇬 新加坡 AnyTLS 02'
+  - '🇸🇬 新加坡 AnyTLS 03'
+  - '🇩🇪 德国 AnyTLS 01'
+  - '🇳🇬 尼日利亚 AnyTLS 01'
+  - '🇮🇳 印度 AnyTLS 01'
+  - '🇭🇰 香港 Reality 01'
+  - '🇭🇰 香港 Reality 02'
+  - '🇭🇰 香港 Reality 03'
+  - '🇭🇰 香港 Reality 04'
+  - '🇯🇵 日本 Reality 04'
+  - '🇯🇵 日本 Reality 01'
+  - '🇯🇵 日本 Reality 02'
+  - '🇯🇵 日本 Reality 03'
+  - '🇸🇬 新加坡 Reality 01'
+  - '🇸🇬 新加坡 Reality 02'
+  - '🇸🇬 新加坡 Reality 03'
+  - '🇩🇪 德国 Reality 01'
+  - '🇳🇬 尼日利亚 Reality 01'
+  - '🇮🇳 印度 Reality 01'
+  - '🇺🇸 美国 Reality 01'
+  - '🇺🇸 美国 Reality 02'
+  - '🇨🇳 南京移动'
+  - '🇨🇳 广州移动'
+  - '🇨🇳 广州电信'
+  - '🇨🇳 南京电信'
+  - '🇨🇳 北京电信'
+  - '🇨🇳 保定联通'
+  - '🇨🇳 苏州联通'
+  - '🇨🇳 广州联通'
+  - '🇨🇳 南京联通'
+  - 前置中转
+  - 跳板线路
+  - 关闭
+- {name: 手动选择, type: select, proxies: ['🇭🇰 香港 AnyTLS 01', '🇭🇰 香港 AnyTLS 02', '🇭🇰 香港 AnyTLS 03', '🇭🇰 香港 AnyTLS 04', '🇯🇵 日本
+      AnyTLS 04', '🇯🇵 日本 AnyTLS 01', '🇯🇵 日本 AnyTLS 02', '🇯🇵 日本 AnyTLS 03', '🇸🇬 新加坡 AnyTLS 01', '🇸🇬 新加坡 AnyTLS 02', '🇸🇬 新加坡
+      AnyTLS 03', '🇩🇪 德国 AnyTLS 01', '🇳🇬 尼日利亚 AnyTLS 01', '🇮🇳 印度 AnyTLS 01', '🇭🇰 香港 Reality 01', '🇭🇰 香港 Reality 02', '🇭🇰 香港
+      Reality 03', '🇭🇰 香港 Reality 04', '🇯🇵 日本 Reality 04', '🇯🇵 日本 Reality 01', '🇯🇵 日本 Reality 02', '🇯🇵 日本 Reality 03', '🇸🇬
+      新加坡 Reality 01', '🇸🇬 新加坡 Reality 02', '🇸🇬 新加坡 Reality 03', '🇩🇪 德国 Reality 01', '🇳🇬 尼日利亚 Reality 01', '🇮🇳 印度 Reality
+      01', '🇺🇸 美国 Reality 01', '🇺🇸 美国 Reality 02', '🇨🇳 南京移动', '🇨🇳 广州移动', '🇨🇳 广州电信', '🇨🇳 南京电信', '🇨🇳 北京电信', '🇨🇳 保定联通', '🇨🇳 苏州联通',
+    '🇨🇳 广州联通', '🇨🇳 南京联通']}
+- {name: 前置中转, type: select, proxies: [关闭, 跳板线路, '🇨🇳 南京移动', '🇨🇳 广州移动', '🇨🇳 广州电信', '🇨🇳 南京电信', '🇨🇳 北京电信', '🇨🇳 保定联通', '🇨🇳 苏州联通',
+    '🇨🇳 广州联通', '🇨🇳 南京联通']}
+- {name: 跳板线路, type: url-test, proxies: ['🇨🇳 南京移动', '🇨🇳 广州移动', '🇨🇳 广州电信', '🇨🇳 南京电信', '🇨🇳 北京电信', '🇨🇳 保定联通', '🇨🇳 苏州联通', '🇨🇳
+      广州联通', '🇨🇳 南京联通'], url: 'http://connectivitycheck.platform.hicloud.com/generate_204', interval: 300, tolerance: 
+    100, lazy: true, hidden: true}
 - {name: 关闭, type: select, proxies: [DIRECT], hidden: true}
-- {name: 自动选择, type: url-test, proxies: ['🇭🇰 香港 AnyTLS 01', '🇭🇰 香港 AnyTLS 02', '🇭🇰 香港 AnyTLS 03', '🇭🇰 香港 AnyTLS 04', '🇯🇵 日本 AnyTLS 04', '🇯🇵 日本 AnyTLS 01', '🇯🇵 日本 AnyTLS 02', '🇯🇵 日本 AnyTLS 03', '🇸🇬 新加坡 AnyTLS 01', '🇸🇬 新加坡 AnyTLS 02', '🇸🇬 新加坡 AnyTLS 03', '🇩🇪 德国 AnyTLS 01', '🇳🇬 尼日利亚 AnyTLS 01', '🇮🇳 印度 AnyTLS 01', '🇭🇰 香港 Reality 01', '🇭🇰 香港 Reality 02', '🇭🇰 香港 Reality 03', '🇭🇰 香港 Reality 04', '🇯🇵 日本 Reality 04', '🇯🇵 日本 Reality 01', '🇯🇵 日本 Reality 02', '🇯🇵 日本 Reality 03', '🇸🇬 新加坡 Reality 01', '🇸🇬 新加坡 Reality 02', '🇸🇬 新加坡 Reality 03', '🇩🇪 德国 Reality 01', '🇳🇬 尼日利亚 Reality 01', '🇮🇳 印度 Reality 01', '🇺🇸 美国 Reality 01', '🇺🇸 美国 Reality 02'], url: 'https://www.gstatic.com/generate_204', interval: 300, timeout: 2000, tolerance: 50, max-failed-times: 3, lazy: true, hidden: true, exclude-filter: 剩余流量|套餐到期|重置|看不到节点|官网}
-- {name: 故障转移, type: fallback, proxies: ['🇭🇰 香港 AnyTLS 01', '🇭🇰 香港 AnyTLS 02', '🇭🇰 香港 AnyTLS 03', '🇭🇰 香港 AnyTLS 04', '🇯🇵 日本 AnyTLS 04', '🇯🇵 日本 AnyTLS 01', '🇯🇵 日本 AnyTLS 02', '🇯🇵 日本 AnyTLS 03', '🇸🇬 新加坡 AnyTLS 01', '🇸🇬 新加坡 AnyTLS 02', '🇸🇬 新加坡 AnyTLS 03', '🇩🇪 德国 AnyTLS 01', '🇳🇬 尼日利亚 AnyTLS 01', '🇮🇳 印度 AnyTLS 01', '🇭🇰 香港 Reality 01', '🇭🇰 香港 Reality 02', '🇭🇰 香港 Reality 03', '🇭🇰 香港 Reality 04', '🇯🇵 日本 Reality 04', '🇯🇵 日本 Reality 01', '🇯🇵 日本 Reality 02', '🇯🇵 日本 Reality 03', '🇸🇬 新加坡 Reality 01', '🇸🇬 新加坡 Reality 02', '🇸🇬 新加坡 Reality 03', '🇩🇪 德国 Reality 01', '🇳🇬 尼日利亚 Reality 01', '🇮🇳 印度 Reality 01', '🇺🇸 美国 Reality 01', '🇺🇸 美国 Reality 02'], url: 'https://www.gstatic.com/generate_204', interval: 300, timeout: 2000, max-failed-times: 3, lazy: true, hidden: true, exclude-filter: 剩余流量|套餐到期|重置|看不到节点|官网}
-- {name: 香港自动, type: url-test, proxies: ['🇭🇰 香港 AnyTLS 01', '🇭🇰 香港 AnyTLS 02', '🇭🇰 香港 AnyTLS 03', '🇭🇰 香港 AnyTLS 04', '🇭🇰 香港 Reality 01', '🇭🇰 香港 Reality 02', '🇭🇰 香港 Reality 03', '🇭🇰 香港 Reality 04'], url: 'https://www.gstatic.com/generate_204', interval: 300, timeout: 2000, tolerance: 50, lazy: true, hidden: true}
-- {name: 日本自动, type: url-test, proxies: ['🇯🇵 日本 AnyTLS 04', '🇯🇵 日本 AnyTLS 01', '🇯🇵 日本 AnyTLS 02', '🇯🇵 日本 AnyTLS 03', '🇯🇵 日本 Reality 04', '🇯🇵 日本 Reality 01', '🇯🇵 日本 Reality 02', '🇯🇵 日本 Reality 03'], url: 'https://www.gstatic.com/generate_204', interval: 300, timeout: 2000, tolerance: 50, lazy: true, hidden: true}
-- {name: 新加坡自动, type: url-test, proxies: ['🇸🇬 新加坡 AnyTLS 01', '🇸🇬 新加坡 AnyTLS 02', '🇸🇬 新加坡 AnyTLS 03', '🇸🇬 新加坡 Reality 01', '🇸🇬 新加坡 Reality 02', '🇸🇬 新加坡 Reality 03'], url: 'https://www.gstatic.com/generate_204', interval: 300, timeout: 2000, tolerance: 50, lazy: true, hidden: true}
-- {name: 美国自动, type: url-test, proxies: ['🇺🇸 美国 Reality 01', '🇺🇸 美国 Reality 02'], url: 'https://www.gstatic.com/generate_204', interval: 300, timeout: 2000, tolerance: 50, lazy: true, hidden: true}
 - {name: '🛑 广告拦截', type: select, proxies: [不拦截, 拦截]}
 - {name: 不拦截, type: select, proxies: [PASS], hidden: true}
 - {name: 拦截, type: select, proxies: [REJECT], hidden: true}
