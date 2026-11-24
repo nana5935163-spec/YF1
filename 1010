@@ -147,5 +147,4 @@ rules:
     - 'RULE-SET,cn,DIRECT'
     - 'DOMAIN-SUFFIX,cn,DIRECT'
     - 'RULE-SET,cn-ip,DIRECT,no-resolve'
-    - 'GEOIP,CN,DIRECT'
     - 'MATCH,手动选择'
